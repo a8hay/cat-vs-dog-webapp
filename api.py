@@ -15,7 +15,7 @@ UPLOAD_FOLDER = "static"
 def get_model():
 	global model
 	model = torchvision.models.densenet121(pretrained=True)
-	num_ftrs = modeup.classifier.in_features
+	num_ftrs = model.classifier.in_features
 	model.classifier = nn.Sequential(
 			nn.Linear(num_ftrs, 500),
 			nn.Linear(500, 2)
@@ -61,4 +61,4 @@ def upload_predict():
 if __name__ == "__main__":
 	print("loading pytorch model")
 	get_model()
-	app.run(debug=False)
+	app.run(debug=False, port="8000")
