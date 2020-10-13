@@ -61,4 +61,4 @@ def upload_predict():
 if __name__ == "__main__":
 	print("loading pytorch model")
 	get_model()
-	app.run(debug=False, port="8000")
+	app.run(debug=False)
