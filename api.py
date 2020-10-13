@@ -15,7 +15,7 @@ UPLOAD_FOLDER = "static"
 def get_model():
 	global model
 	model = torchvision.models.densenet121(pretrained=True)
-	num_ftrs = model.classifier.in_features
+	num_ftrs = modeup.classifier.in_features
 	model.classifier = nn.Sequential(
 			nn.Linear(num_ftrs, 500),
 			nn.Linear(500, 2)
